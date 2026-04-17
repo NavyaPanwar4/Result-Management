@@ -1,0 +1,207 @@
+/* ============================================================
+   style.css — University Result Management System
+   Aesthetic: Academic / clean institutional with bold accents
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --navy:    #0a1628;
+    --blue:    #1a4b8c;
+    --accent:  #e8a020;
+    --light:   #f4f7fb;
+    --white:   #ffffff;
+    --border:  #d0dae8;
+    --text:    #1e2a3a;
+    --muted:   #6b7c93;
+    --success: #1a8c4b;
+    --danger:  #c0392b;
+    --shadow:  0 4px 24px rgba(10,22,40,.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3);
+    position: sticky; top: 0; z-index: 100;
+}
+header .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    letter-spacing: .02em;
+}
+header .logo span { color: var(--accent); }
+header nav a {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    transition: color .2s;
+}
+header nav a:hover, header nav a.active { color: var(--accent); }
+
+/* ── LAYOUT ── */
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ── CARD ── */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+.card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+/* ── FORM ── */
+.form-group { margin-bottom: 1.1rem; }
+label { display: block; font-size: .85rem; font-weight: 600; color: var(--muted); margin-bottom: .35rem; text-transform: uppercase; letter-spacing: .06em; }
+input[type=text], input[type=password], input[type=email], input[type=file], select {
+    width: 100%;
+    padding: .65rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: .95rem;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+}
+input:focus, select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26,75,140,.12);
+}
+
+/* ── BUTTONS ── */
+.btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    padding: .65rem 1.4rem;
+    border: none; border-radius: 8px;
+    font-family: inherit; font-size: .9rem; font-weight: 600;
+    cursor: pointer; text-decoration: none;
+    transition: all .2s;
+}
+.btn-primary   { background: var(--blue);  color: var(--white); }
+.btn-primary:hover   { background: #163e76; }
+.btn-accent    { background: var(--accent); color: var(--navy); }
+.btn-accent:hover    { background: #d49019; }
+.btn-success   { background: var(--success); color: var(--white); }
+.btn-success:hover   { background: #166e3b; }
+.btn-outline   { background: transparent; border: 1.5px solid var(--blue); color: var(--blue); }
+.btn-outline:hover   { background: var(--blue); color: var(--white); }
+.btn-sm { padding: .4rem .9rem; font-size: .82rem; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th {
+    background: var(--navy); color: var(--white);
+    padding: .7rem 1rem; text-align: left;
+    font-weight: 500; font-size: .82rem; letter-spacing: .05em;
+}
+td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #eef3fb; }
+
+/* ── ALERTS ── */
+.alert {
+    padding: .85rem 1.1rem; border-radius: 8px;
+    margin-bottom: 1rem; font-size: .9rem; font-weight: 500;
+}
+.alert-success { background: #d4edda; color: #155724; border-left: 4px solid var(--success); }
+.alert-danger  { background: #fde8e8; color: #7b1e1e; border-left: 4px solid var(--danger); }
+.alert-info    { background: #dbeafe; color: #1e3a7b; border-left: 4px solid var(--blue); }
+
+/* ── GRADE BADGE ── */
+.grade {
+    display: inline-block; padding: .2rem .65rem;
+    border-radius: 20px; font-weight: 700; font-size: .82rem;
+}
+.grade-O  { background: #d4edda; color: #155724; }
+.grade-Ap { background: #cce5ff; color: #004085; }
+.grade-A  { background: #d1ecf1; color: #0c5460; }
+.grade-Bp { background: #fff3cd; color: #856404; }
+.grade-B  { background: #fde8e8; color: #7b1e1e; }
+.grade-F  { background: #343a40; color: #fff; }
+
+/* ── SEMESTER SELECT ── */
+.sem-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.sem-tab {
+    padding: .4rem 1rem; border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--white); color: var(--muted);
+    font-size: .85rem; font-weight: 600; cursor: pointer;
+    text-decoration: none; transition: all .2s;
+}
+.sem-tab:hover, .sem-tab.active {
+    background: var(--blue); border-color: var(--blue); color: var(--white);
+}
+
+/* ── LOGIN PAGE ── */
+.login-wrap {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a70 100%);
+}
+.login-box {
+    background: var(--white); border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    padding: 2.5rem; width: 100%; max-width: 420px;
+}
+.login-box .brand {
+    text-align: center; margin-bottom: 2rem;
+}
+.login-box .brand h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem; color: var(--navy); margin-top: .5rem;
+}
+.login-box .brand p { color: var(--muted); font-size: .88rem; }
+
+/* ── STAT BOXES ── */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.stat-box {
+    background: var(--white); border-radius: 12px;
+    box-shadow: var(--shadow); padding: 1.2rem 1.5rem;
+    border-top: 4px solid var(--blue);
+}
+.stat-box.accent { border-top-color: var(--accent); }
+.stat-box.green  { border-top-color: var(--success); }
+.stat-box .val { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--navy); }
+.stat-box .lbl { font-size: .78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+/* ── PROGRESS BAR ── */
+.progress-row { margin: .5rem 0; }
+.progress-label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .25rem; }
+.progress-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--blue), #3b82f6); border-radius: 4px; transition: width .6s ease; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .container { padding: 1rem; }
+    .card { padding: 1.25rem; }
+    header .logo { font-size: 1rem; }
+}
