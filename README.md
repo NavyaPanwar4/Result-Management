@@ -111,7 +111,7 @@ Open: [http://localhost:8000/login.php](http://localhost:8000/login.php)
 ### Student Login
 | Student ID | Password     | Name          |
 |------------|-------------|---------------|
-| 22001001   | password123 | Navya Sharma  |
+| 22001001   | password123 | Navya Panwar  |
 | 22001002   | password123 | Aryan Gupta   |
 | 22001003   | password123 | Priya Singh   |
 
@@ -143,7 +143,7 @@ The admin uploads a PDF where each student block looks like:
 
 ```
 StudentID: 22001001
-Name: Navya Sharma
+Name: Navya Panwar
 Class: 6AIML-IV
 Semester: 5
 Subject1: 88
@@ -168,7 +168,7 @@ Alternatively, upload a `.csv` with these exact column headers:
 
 ```
 StudentID,Name,Class,Semester,Subject1,Subject2,Subject3,Subject4,Subject5,Subject6,MaxMarks,Grade
-22001001,Navya Sharma,6AIML-IV,5,88,92,79,85,91,76,600,A
+22001001,Navya Panwar,6AIML-IV,5,88,92,79,85,91,76,600,A
 ```
 
 ---
