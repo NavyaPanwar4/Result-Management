@@ -193,21 +193,4 @@ StudentID,Name,Class,Semester,Subject1,Subject2,Subject3,Subject4,Subject5,Subje
 
 Both have graceful fallbacks if Composer is unavailable.
 
----
-
-## 📧 Submission
-
-Zip the entire folder and email to: **narinderkaur@mait.ac.in**
-
-Include in the email:
-- Name
-- Enrollment Number
-- Class
-
-```bash
-zip -r Assignment_WT_2_YourName.zip result-management/
-```
-
----
-
 *Built for Web Technologies (CIE-356T) | MAIT Delhi | Department of Computer Science and Technology*
